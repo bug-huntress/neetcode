@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+
+public class App {
+
+    public static void main(String[] args) {
+       int[] nums = {22, 5 , 6, 12, 1, 10, 27, 8};
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter target: ");
+       int target = sc.nextInt();
+       sc.close();
+       int ans = linSear(nums, target);
+       System.out.println(ans);
+    }
+
+    static int linSear(int[] arr, int target) {
+        if (arr.length == 0) {
+            return -1;
+        }
+
+        for (int index = 0; index < arr.length; index++) {
+            int element = arr[index];
+            if (element == target) {
+                return index;
+            }
+        }
+        return -1;
+    }
+}
